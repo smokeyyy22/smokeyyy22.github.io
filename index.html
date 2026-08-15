@@ -5,28 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Salwa Drissi — Cybersecurity Engineering</title>
 <meta name="description" content="Salwa Drissi — cybersecurity engineering student. Offensive & defensive security, threat intel, and applied security projects." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0D12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='18' text-anchor='middle' fill='%237CE0C6'%3E%3E_%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23070A0E'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='18' text-anchor='middle' fill='%2300FFC2'%3E%3E_%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="is-booting">
 
 <div class="scanlines" aria-hidden="true"></div>
 <div class="grid-overlay" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ============ BOOT SCREEN ============ -->
+<div class="boot" id="boot" role="status" aria-label="Loading">
+  <div class="boot__lines" id="bootLines"></div>
+  <div class="boot__bar"><span id="bootFill"></span></div>
+  <div class="boot__pct" id="bootPct">INITIALIZING… 0%</div>
+</div>
 
 <nav class="nav">
-  <a href="#top" class="nav__brand">sd<span class="cursor">_</span></a>
+  <a href="#top" class="nav__brand">SD<span class="cursor">_</span></a>
   <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <div class="nav__links" id="navLinks">
-    <a href="#about" data-nav>profile</a>
-    <a href="#skills" data-nav>skills</a>
-    <a href="#projects" data-nav>projects</a>
-    <a href="#interests" data-nav>interests</a>
-    <a href="#contact" data-nav>contact</a>
+    <a href="#about" data-nav>[ PROFILE ]</a>
+    <a href="#skills" data-nav>[ STATS ]</a>
+    <a href="#projects" data-nav>[ MISSIONS ]</a>
+    <a href="#interests" data-nav>[ SIDE_QUESTS ]</a>
+    <a href="#contact" data-nav>[ COMMS ]</a>
   </div>
 </nav>
 
@@ -34,11 +42,16 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
+    <div class="hud-corner hud-corner--tl" aria-hidden="true"></div>
+    <div class="hud-corner hud-corner--tr" aria-hidden="true"></div>
+    <div class="hud-corner hud-corner--bl" aria-hidden="true"></div>
+    <div class="hud-corner hud-corner--br" aria-hidden="true"></div>
+
     <div class="hero__inner">
-      <p class="eyebrow">[ session: authenticated ]</p>
-      <h1 class="hero__title">Salwa Drissi</h1>
-      <p class="hero__subtitle">Cybersecurity Engineering Student</p>
-      <p class="hero__desc">Offensive &amp; defensive security · threat intelligence · applied security projects</p>
+      <p class="eyebrow">▚ SESSION AUTHENTICATED ▚ ACCESS LEVEL: OPERATIVE</p>
+      <h1 class="hero__title glitch" data-text="SALWA DRISSI">SALWA DRISSI</h1>
+      <p class="hero__subtitle">CYBERSECURITY ENGINEERING // CLASS: HYBRID (RED/BLUE)</p>
+      <p class="hero__desc">Offensive &amp; defensive security · threat intelligence · applied security builds</p>
 
       <div class="terminal" role="img" aria-label="Terminal animation showing a whoami command">
         <div class="terminal__bar">
@@ -51,13 +64,15 @@
         </div>
       </div>
     </div>
-    <a class="scrolldown" href="#about" aria-label="Scroll to profile"><span></span></a>
+    <a class="scrolldown" href="#about" aria-label="Scroll to profile"><span></span>PRESS TO CONTINUE</a>
   </section>
 
   <!-- ============ ABOUT ============ -->
   <section class="section" id="about">
-    <p class="tag">[profile]</p>
-    <h2 class="section__title">About</h2>
+    <div class="hud-corner hud-corner--tl" aria-hidden="true"></div>
+    <div class="hud-corner hud-corner--br" aria-hidden="true"></div>
+    <p class="tag">// 01 · PLAYER PROFILE</p>
+    <h2 class="section__title">Dossier</h2>
     <div class="about__grid">
       <div class="about__text">
         <p>I'm a 4th-year cybersecurity engineering student, equally interested in how systems get broken and how they get defended. I split my time between red-team style projects — building attack infrastructure, simulating intrusions — and the blue-team side: threat hunting, SIEM tuning, and making sense of noisy logs.</p>
@@ -65,17 +80,17 @@
         <p>Outside of coursework, I spend a lot of time in CTFs and on HackTheBox, chipping away at boxes for fun as much as practice.</p>
       </div>
       <div class="about__stats">
-        <div class="stat">
-          <span class="stat__label">focus</span>
-          <span class="stat__value">Offensive + Defensive Security</span>
+        <div class="stat-block">
+          <span class="stat-block__label">CLASS</span>
+          <span class="stat-block__value">Offensive + Defensive Security</span>
         </div>
-        <div class="stat">
-          <span class="stat__label">currently</span>
-          <span class="stat__value">Building &amp; breaking things in home-lab environments</span>
+        <div class="stat-block">
+          <span class="stat-block__label">CURRENT QUEST</span>
+          <span class="stat-block__value">Building &amp; breaking things in home-lab environments</span>
         </div>
-        <div class="stat">
-          <span class="stat__label">languages</span>
-          <span class="stat__value">Arabic · French · English</span>
+        <div class="stat-block">
+          <span class="stat-block__label">LANGUAGES</span>
+          <span class="stat-block__value">Arabic · French · English</span>
         </div>
       </div>
     </div>
@@ -83,50 +98,61 @@
 
   <!-- ============ SKILLS ============ -->
   <section class="section" id="skills">
-    <p class="tag">[skills]</p>
-    <h2 class="section__title">Toolset</h2>
-    <div class="skills__grid">
+    <div class="hud-corner hud-corner--tl" aria-hidden="true"></div>
+    <div class="hud-corner hud-corner--br" aria-hidden="true"></div>
+    <p class="tag">// 02 · CHARACTER STATS</p>
+    <h2 class="section__title">Skill Tree</h2>
 
-      <div class="skillcat">
-        <h3>Offensive</h3>
-        <ul class="chips">
-          <li>Pentesting</li><li>Red Team</li><li>C2 Frameworks</li>
-          <li>Metasploit</li><li>Burp Suite</li><li>Nmap</li>
+    <div class="stats__grid">
+
+      <div class="statcat">
+        <h3><span class="statcat__icon">⚔</span> Offensive</h3>
+        <ul class="xpbars">
+          <li><span class="xpbars__label">Pentesting</span><span class="xpbars__track"><span class="xpbars__fill" style="width:85%"></span></span></li>
+          <li><span class="xpbars__label">Red Team</span><span class="xpbars__track"><span class="xpbars__fill" style="width:80%"></span></span></li>
+          <li><span class="xpbars__label">C2 Frameworks</span><span class="xpbars__track"><span class="xpbars__fill" style="width:78%"></span></span></li>
+          <li><span class="xpbars__label">Metasploit</span><span class="xpbars__track"><span class="xpbars__fill" style="width:75%"></span></span></li>
+          <li><span class="xpbars__label">Burp Suite</span><span class="xpbars__track"><span class="xpbars__fill" style="width:80%"></span></span></li>
+          <li><span class="xpbars__label">Nmap</span><span class="xpbars__track"><span class="xpbars__fill" style="width:85%"></span></span></li>
         </ul>
       </div>
 
-      <div class="skillcat">
-        <h3>Defensive</h3>
-        <ul class="chips">
-          <li>Blue Team</li><li>SOC</li><li>SIEM</li>
-          <li>Threat Hunting</li><li>IDS / IPS</li><li>Wireshark</li>
+      <div class="statcat">
+        <h3><span class="statcat__icon">🛡</span> Defensive</h3>
+        <ul class="xpbars">
+          <li><span class="xpbars__label">Blue Team</span><span class="xpbars__track"><span class="xpbars__fill" style="width:82%"></span></span></li>
+          <li><span class="xpbars__label">SOC</span><span class="xpbars__track"><span class="xpbars__fill" style="width:80%"></span></span></li>
+          <li><span class="xpbars__label">SIEM</span><span class="xpbars__track"><span class="xpbars__fill" style="width:82%"></span></span></li>
+          <li><span class="xpbars__label">Threat Hunting</span><span class="xpbars__track"><span class="xpbars__fill" style="width:78%"></span></span></li>
+          <li><span class="xpbars__label">IDS / IPS</span><span class="xpbars__track"><span class="xpbars__fill" style="width:72%"></span></span></li>
+          <li><span class="xpbars__label">Wireshark</span><span class="xpbars__track"><span class="xpbars__fill" style="width:78%"></span></span></li>
         </ul>
       </div>
 
-      <div class="skillcat">
-        <h3>Network &amp; Systems</h3>
+      <div class="statcat">
+        <h3><span class="statcat__icon">🖧</span> Network &amp; Systems</h3>
         <ul class="chips">
           <li>Firewalls</li><li>VPN</li><li>GNS3</li><li>Cisco</li><li>TCP/IP</li>
           <li>Linux</li><li>Kali</li><li>Windows Server</li><li>Active Directory</li><li>Bash</li>
         </ul>
       </div>
 
-      <div class="skillcat">
-        <h3>AI for Security</h3>
+      <div class="statcat">
+        <h3><span class="statcat__icon">✦</span> AI for Security</h3>
         <ul class="chips">
           <li>LLMs</li><li>RAG</li><li>Threat Analysis Automation</li>
         </ul>
       </div>
 
-      <div class="skillcat">
-        <h3>Cloud &amp; DevOps</h3>
+      <div class="statcat">
+        <h3><span class="statcat__icon">☁</span> Cloud &amp; DevOps</h3>
         <ul class="chips">
           <li>Azure</li><li>Docker</li><li>Git</li><li>Power Apps</li>
         </ul>
       </div>
 
-      <div class="skillcat">
-        <h3>Programming</h3>
+      <div class="statcat">
+        <h3><span class="statcat__icon">⌨</span> Programming</h3>
         <ul class="chips">
           <li>Python</li><li>C / C++</li><li>JavaScript</li><li>SQL</li>
         </ul>
@@ -137,62 +163,76 @@
 
   <!-- ============ PROJECTS ============ -->
   <section class="section" id="projects">
-    <p class="tag">[projects]</p>
-    <h2 class="section__title">Case Files</h2>
+    <div class="hud-corner hud-corner--tl" aria-hidden="true"></div>
+    <div class="hud-corner hud-corner--br" aria-hidden="true"></div>
+    <p class="tag">// 03 · MISSION LOG</p>
+    <h2 class="section__title">Achievements Unlocked</h2>
     <p class="section__lead">A few things I've built to learn by doing.</p>
 
     <div class="cases">
 
       <article class="case">
-        <div class="case__head">
-          <span class="case__id">CASE-01</span>
-          <span class="case__status">active</span>
+        <div class="case__badge" aria-hidden="true">🏆</div>
+        <div class="case__body">
+          <div class="case__head">
+            <span class="case__id">MISSION 01</span>
+            <span class="case__status">UNLOCKED</span>
+          </div>
+          <h3 class="case__title">CyberSentinel</h3>
+          <p class="case__sub">AI-Powered Threat Analysis Platform</p>
+          <p class="case__desc">A threat analysis platform built around a locally hosted LLM combined with retrieval-augmented generation. Ingests threat reports, IOCs, and security feeds to produce contextualized analysis and recommendations — kept fully isolated to protect data confidentiality.</p>
+          <ul class="case__stack">
+            <li>Python</li><li>Local LLM</li><li>RAG</li><li>Vector DB</li><li>Threat Intel</li>
+          </ul>
         </div>
-        <h3 class="case__title">CyberSentinel</h3>
-        <p class="case__sub">AI-Powered Threat Analysis Platform</p>
-        <p class="case__desc">A threat analysis platform built around a locally hosted LLM combined with retrieval-augmented generation. It ingests threat reports, IOCs, and security feeds to produce contextualized analysis and recommendations — kept fully isolated to protect data confidentiality.</p>
-        <ul class="case__stack">
-          <li>Python</li><li>Local LLM</li><li>RAG</li><li>Vector DB</li><li>Threat Intel</li>
-        </ul>
       </article>
 
       <article class="case">
-        <div class="case__head">
-          <span class="case__id">CASE-02</span>
-          <span class="case__status">active</span>
+        <div class="case__badge" aria-hidden="true">🏆</div>
+        <div class="case__body">
+          <div class="case__head">
+            <span class="case__id">MISSION 02</span>
+            <span class="case__status">UNLOCKED</span>
+          </div>
+          <h3 class="case__title">C2 Infrastructure on GNS3</h3>
+          <p class="case__sub">Attack Simulation &amp; Automation</p>
+          <p class="case__desc">A Command-and-Control architecture designed and deployed inside a fully emulated network. Simulates complete attack chains — initial access, persistence, lateral movement, exfiltration — with automated payload delivery and beaconing to study detection gaps and red-team tradecraft.</p>
+          <ul class="case__stack">
+            <li>GNS3</li><li>C2 Frameworks</li><li>Linux</li><li>Bash</li><li>Python</li><li>Red Team</li>
+          </ul>
         </div>
-        <h3 class="case__title">C2 Infrastructure on GNS3</h3>
-        <p class="case__sub">Attack Simulation &amp; Automation</p>
-        <p class="case__desc">A Command-and-Control architecture designed and deployed inside a fully emulated network. Simulates complete attack chains — initial access, persistence, lateral movement, exfiltration — with automated payload delivery and beaconing to study detection gaps and red-team tradecraft.</p>
-        <ul class="case__stack">
-          <li>GNS3</li><li>C2 Frameworks</li><li>Linux</li><li>Bash</li><li>Python</li><li>Red Team</li>
-        </ul>
       </article>
 
       <article class="case">
-        <div class="case__head">
-          <span class="case__id">CASE-03</span>
-          <span class="case__status">deployed</span>
+        <div class="case__badge" aria-hidden="true">🏆</div>
+        <div class="case__body">
+          <div class="case__head">
+            <span class="case__id">MISSION 03</span>
+            <span class="case__status">DEPLOYED</span>
+          </div>
+          <h3 class="case__title">Password Robustness Analyzer</h3>
+          <p class="case__sub">Cloud-Hosted Security Tool</p>
+          <p class="case__desc">A cloud-deployed web app that evaluates password strength via entropy calculation, checks against known breach lists, and verifies compliance with password policies. Hosted on Azure with secured HTTPS endpoints and managed identity.</p>
+          <ul class="case__stack">
+            <li>Azure</li><li>Python</li><li>Web App</li><li>Cloud Security</li>
+          </ul>
         </div>
-        <h3 class="case__title">Password Robustness Analyzer</h3>
-        <p class="case__sub">Cloud-Hosted Security Tool</p>
-        <p class="case__desc">A cloud-deployed web app that evaluates password strength via entropy calculation, checks against known breach lists, and verifies compliance with password policies. Hosted on Azure with secured HTTPS endpoints and managed identity.</p>
-        <ul class="case__stack">
-          <li>Azure</li><li>Python</li><li>Web App</li><li>Cloud Security</li>
-        </ul>
       </article>
 
       <article class="case">
-        <div class="case__head">
-          <span class="case__id">CASE-04</span>
-          <span class="case__status">active</span>
+        <div class="case__badge" aria-hidden="true">🏆</div>
+        <div class="case__body">
+          <div class="case__head">
+            <span class="case__id">MISSION 04</span>
+            <span class="case__status">UNLOCKED</span>
+          </div>
+          <h3 class="case__title">SecureChain</h3>
+          <p class="case__sub">Blockchain Notarization System</p>
+          <p class="case__desc">A decentralized notarization platform using Solana smart contracts and IPFS for tamper-proof document storage. Implements role-based access (Notary / Client), client-side AES-256 encryption, and a full upload → verification → notarization workflow.</p>
+          <ul class="case__stack">
+            <li>Solana</li><li>Smart Contracts</li><li>Rust</li><li>AES-256</li><li>IPFS</li>
+          </ul>
         </div>
-        <h3 class="case__title">SecureChain</h3>
-        <p class="case__sub">Blockchain Notarization System</p>
-        <p class="case__desc">A decentralized notarization platform using Solana smart contracts and IPFS for tamper-proof document storage. Implements role-based access (Notary / Client), client-side AES-256 encryption, and a full upload → verification → notarization workflow.</p>
-        <ul class="case__stack">
-          <li>Solana</li><li>Smart Contracts</li><li>Rust</li><li>AES-256</li><li>IPFS</li>
-        </ul>
       </article>
 
     </div>
@@ -200,17 +240,21 @@
 
   <!-- ============ INTERESTS ============ -->
   <section class="section" id="interests">
-    <p class="tag">[interests]</p>
-    <h2 class="section__title">Off the clock</h2>
+    <div class="hud-corner hud-corner--tl" aria-hidden="true"></div>
+    <div class="hud-corner hud-corner--br" aria-hidden="true"></div>
+    <p class="tag">// 04 · SIDE QUESTS</p>
+    <h2 class="section__title">Off the Clock</h2>
     <ul class="chips chips--lg">
-      <li>CTF</li><li>HackTheBox</li><li>Gaming</li><li>Travel</li>
+      <li>🚩 CTF</li><li>📦 HackTheBox</li><li>🎮 Gaming</li><li>✈ Travel</li>
     </ul>
   </section>
 
   <!-- ============ CONTACT ============ -->
   <section class="section section--contact" id="contact">
-    <p class="tag">[contact]</p>
-    <h2 class="section__title">Get in touch</h2>
+    <div class="hud-corner hud-corner--tl" aria-hidden="true"></div>
+    <div class="hud-corner hud-corner--br" aria-hidden="true"></div>
+    <p class="tag">// 05 · COMMS CHANNEL</p>
+    <h2 class="section__title">Open Connection</h2>
     <p class="section__lead">Open to internships, CTF teams, and interesting security work.</p>
     <div class="contact__row">
       <a class="btn" href="mailto:salwadrissi2022@gmail.com">salwadrissi2022@gmail.com</a>
@@ -226,7 +270,7 @@
 </main>
 
 <footer class="footer">
-  <p>built &amp; secured by Salwa Drissi</p>
+  <p>&gt; SYSTEM SECURED — built by Salwa Drissi</p>
 </footer>
 
 <script src="js/main.js"></script>
